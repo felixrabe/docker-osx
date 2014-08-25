@@ -90,18 +90,18 @@ function help() {
 }
 
 function start_vm() {
-    # Start virtual machine if it isn't running
-    if ! vagrant status | grep -q running
+  # Start virtual machine if it isn't running
+  if ! vagrant status | grep -q running
+  then
+    if [[ $1 == "halt" ]]
     then
-      if [[ $1 == "halt" ]]
-      then
-        echo "Docker is not running. Exiting"
-        exit 0
-      fi
-      echo "Start Docker Virtual machine"
-      vagrant up --provision
-      vagrant ssh -c "sudo stop docker; sudo start docker"
+      echo "Docker is not running. Exiting"
+      exit 0
     fi
+    echo "Start Docker Virtual machine"
+    vagrant up --provision
+    vagrant ssh -c "sudo stop docker; sudo start docker"
+  fi
 }
 
 ############
