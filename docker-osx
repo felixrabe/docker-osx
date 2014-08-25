@@ -228,7 +228,7 @@ case "$1" in
   shell)
     echo "Starting local Docker environment..."
     start_vm
-    $SHELL
+    "$SHELL"
     echo "Stopping local Docker environment..."
     exec vagrant halt
     ;;
