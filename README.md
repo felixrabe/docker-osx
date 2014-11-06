@@ -1,12 +1,11 @@
 docker-osx
 ==========
 
-
 # WARNING
 
-This an unofficial docker helper made to simplify docker usage on OSX.
+This project was started before official docker support on Mac OS X. Before using it, take a look the offical way from Docker team: http://docs.docker.io/installation/mac/. We keep this project live until boot2docker fully replace this project (it's almost done)
 
-This project project was started before official docker support on Mac OS X. Before using it, take a look the offical way from Docker team: http://docs.docker.io/installation/mac/.
+# If you are a new docker user don't use this project!
 
 # What is docker-osx
 
@@ -15,6 +14,12 @@ Docker on OS X in three steps:
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html).
 
 2. Put the `docker-osx` script somewhere on your path:
+
+ with [bpkg](https://github.com/bpkg/bpkg):
+
+      bpkg install noplay/docker-osx
+
+ or curl:
 
         curl https://raw.githubusercontent.com/noplay/docker-osx/HEAD/docker-osx > /usr/local/bin/docker-osx
         chmod +x /usr/local/bin/docker-osx
@@ -98,7 +103,7 @@ Default: `4243`
 
 The version of docker that will be installed when provisioning the vagrant vm.
 
-Default: `1.1.1`
+Default: `1.2.0`
 
 ### DOCKER_CLIENT_URL
 
